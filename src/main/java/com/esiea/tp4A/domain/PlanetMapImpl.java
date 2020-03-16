@@ -1,4 +1,4 @@
-package main.java.com.esiea.tp4A.domain;
+package com.esiea.tp4A.domain;
 
 import java.util.HashSet;
 import java.util.Set;
