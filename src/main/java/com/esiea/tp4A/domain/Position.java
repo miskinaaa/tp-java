@@ -1,6 +1,4 @@
-package com.esiea.tp4A.domain;
-
-import com.esiea.tp4A.domain.Direction;
+package main.java.com.esiea.tp4A.domain;
 
 public interface Position {
 
