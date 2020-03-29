@@ -1,10 +1,11 @@
-package com.esiea.tp4A.domain;
+package main.java.com.esiea.tp4A.domain;
 
 public class MarsRoverImpl implements MarsRover {
 
     private int x;
     private int y;
     private Direction direction;
+    private PlanetMapImpl map;
 
     public MarsRoverImpl() {  }
 
@@ -18,7 +19,8 @@ public class MarsRoverImpl implements MarsRover {
 
     @Override
     public MarsRover updateMap(PlanetMap map) {
-        return null;
+        this.map = (PlanetMapImpl) map;
+        return this;
     }
 
     @Override

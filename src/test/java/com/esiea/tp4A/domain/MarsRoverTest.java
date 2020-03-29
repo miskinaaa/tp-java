@@ -1,5 +1,6 @@
-package main.java.com.esiea.tp4A.domain;
+package test.java.com.esiea.tp4A.domain;
 
+import main.java.com.esiea.tp4A.domain.*;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +14,7 @@ public class MarsRoverTest {
 
     @Test
     void move_forward() {
-        marsRover.initialize(Position.of(0,0,Direction.NORTH));
+        marsRover.initialize(Position.of(0,0, Direction.NORTH));
         marsRover.move("f");
         grid.newCordo(0,1);
         assertEquals(marsRover.getX(), 0);
@@ -69,6 +70,8 @@ public class MarsRoverTest {
         assertEquals(marsRover.getDirection(), Direction.WEST);
     }
 
+
+
     @Test
     void moving_north_when_0_50_N() {
         marsRover.initialize(Position.of(0,50,Direction.NORTH));
@@ -77,8 +80,6 @@ public class MarsRoverTest {
         marsRover.initialize(Position.of(grid.getX(),grid.getY(),Direction.NORTH));
         assertEquals(-49, grid.getY());
     }
-
-
     @Test
     void moving_east_when_50_0_E() {
         marsRover.initialize(Position.of(50,0,Direction.EAST));
