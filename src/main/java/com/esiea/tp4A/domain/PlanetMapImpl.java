@@ -4,11 +4,22 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class PlanetMapImpl implements PlanetMap {
-	private Set<Position> obstaclePositions = new HashSet<Position>();
-		
+	private Set<Position> obstaclePositions;
+
+	public PlanetMap initialize() {
+		initialize(new HashSet<>());
+		return this;
+	}
+
+
+	public PlanetMap initialize(Set<Position> positions) {
+		this.obstaclePositions = positions;
+		return this;
+	}
+
 	@Override
 	public Set<Position> obstaclePositions() {
-		return obstaclePositions;
+		return this.obstaclePositions;
 	}
 	
 	public void addObstacles(int x, int y) {
@@ -24,7 +35,7 @@ public class PlanetMapImpl implements PlanetMap {
 		return false;
 
 	}
-	
+
 	public boolean isThereObstacles(Position position) {
 		for(Position p : obstaclePositions) {
 			if(p.getX() == position.getX() && p.getY() == position.getY()) {

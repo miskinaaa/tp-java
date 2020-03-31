@@ -11,7 +11,6 @@ public interface Position {
     }
 
     final class FixedPosition implements Position {
-
         private final int x;
         private final int y;
         private final Direction direction;
