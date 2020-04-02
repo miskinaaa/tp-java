@@ -34,23 +34,28 @@ public class MarsRoverImpl implements MarsRover {
         command = command.toLowerCase();
         System.out.println(command);
         for (int i = 0; i < command.length(); i++) {
-            System.out.println(i +" : "+ command.charAt(i));
             if (command.charAt(i) == 'f') {
-                if (this.map != null && this.map.isThereObstacles(this.position)) {
+                if (this.map.isThereObstacles(this.position)) {
+                    System.out.println("A: " + this.map.isThereObstacles(this.position));
+                    break;
+                }
+                else {
+                    System.out.println("B: " + map.isThereObstacles(position));
+                    System.out.println("move forward");
                     moveForward();
                 }
             } else if (command.charAt(i) == 'b') {
-                if (this.map != null && this.map.isThereObstacles(this.position)) {
+                //if (this.map != null && this.map.isThereObstacles(this.position)) {
                     moveBackward();
-                }
+                //}
             } else if (command.charAt(i) == 'l') {
-                if (this.map != null && this.map.isThereObstacles(this.position)) {
+                //if (this.map != null && this.map.isThereObstacles(this.position)) {
                     rotateLeft();
-                }
+                //}
             } else if (command.charAt(i) == 'r') {
-                if (this.map != null && this.map.isThereObstacles(this.position)) {
+                //if (this.map != null && this.map.isThereObstacles(this.position)) {
                     rotateRight();
-                }
+                //}
             } else {
                 return position;
             }
@@ -137,21 +142,21 @@ public class MarsRoverImpl implements MarsRover {
 
 
     public int change_position_plus(int x) {
-        if(x < 50) {
+        if(x < this.map.getSIZE_OF_MAP() / 2) {
             x++;
         }
-        else if(x == 50) {
-            x = -49;
+        else if(x >= (this.map.getSIZE_OF_MAP() / 2)) {
+            x = (-this.map.getSIZE_OF_MAP() / 2) + 1;
         }
         return x;
     }
 
     public int change_position_minus(int x) {
-        if(x > -50) {
+        if(x > (-this.map.getSIZE_OF_MAP() / 2)) {
             x --;
         }
-        else if(x == -50) {
-            x = 49;
+        else if(x == (-this.map.getSIZE_OF_MAP() / 2)) {
+            x = (this.map.getSIZE_OF_MAP() / 2) - 1;
         }
         return x;
     }

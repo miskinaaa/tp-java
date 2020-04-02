@@ -5,8 +5,15 @@ import java.util.Set;
 
 public class PlanetMapImpl implements PlanetMap {
 	private Set<Position> obstaclePositions;
+	private int SIZE_OF_MAP = 100;
 
 	public PlanetMap initialize() {
+		initialize(new HashSet<>());
+		return this;
+	}
+
+	public PlanetMap initialize(int size) {
+		this.SIZE_OF_MAP = size;
 		initialize(new HashSet<>());
 		return this;
 	}
@@ -22,8 +29,16 @@ public class PlanetMapImpl implements PlanetMap {
 		return this.obstaclePositions;
 	}
 
-	public void addObstacles(Position position) {
-		this.obstaclePositions.add(position);
+	public int getSIZE_OF_MAP() {
+		return SIZE_OF_MAP;
+	}
+
+	public boolean addObstacles(Position position) {
+		if (!this.isThereObstacles(position)) {
+			this.obstaclePositions.add(position);
+			return true;
+		}
+		return false;
 	}
 
 	public boolean removeObstacles(Position position) {
