@@ -15,7 +15,7 @@ public class MarsRoverTest {
     final MarsRover marsRoverEast = new MarsRoverImpl().initialize(Position.of(0, 0, Direction.EAST));
     final MarsRover marsRoverWest = new MarsRoverImpl().initialize(Position.of(0, 0, Direction.WEST));
 
-    //Grid grid = new Grid(100,100, marsRover);
+
 
     @Test
     void move_error() {
@@ -118,7 +118,15 @@ public class MarsRoverTest {
         assertEquals(true, checkOb1);
         boolean checkOb2 = planetMapImpl.isThereObstacles(Position.of(7, 6, Direction.NORTH));
         assertEquals(false, checkOb2);
-        marsRover.updateMap(planetMapImpl);
+    }
+
+    @Test
+    void add_obstacles_twice() {
+        PlanetMapImpl planetMapImpl = (PlanetMapImpl) new PlanetMapImpl().initialize();
+        boolean checkOb1 = planetMapImpl.addObstacles(Position.of(4, 6, Direction.NORTH));
+        boolean checkOb2 = planetMapImpl.addObstacles(Position.of(4, 6, Direction.NORTH));
+        assertEquals(true, checkOb1);
+        assertEquals(false, checkOb2);
     }
 
     @Test
@@ -129,7 +137,17 @@ public class MarsRoverTest {
         assertEquals(true, obj);
         boolean obj1 = planetMapImpl.removeObstacles(Position.of(4,4,Direction.NORTH));
         assertEquals(false, obj1);
-        marsRover.updateMap(planetMapImpl);
+    }
+
+    @Test
+    void remove_obstacles_twice() {
+        PlanetMapImpl planetMapImpl = (PlanetMapImpl) new PlanetMapImpl().initialize();
+        Position position_obstacle = Position.of(1, 0, Direction.NORTH);
+        planetMapImpl.addObstacles(position_obstacle);
+        boolean checkOb1 = planetMapImpl.removeObstacles(position_obstacle);
+        boolean checkOb2 = planetMapImpl.removeObstacles(position_obstacle);
+        assertEquals(true, checkOb1);
+        assertEquals(false, checkOb2);
     }
 
     @Test
