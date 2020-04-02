@@ -1,11 +1,10 @@
 package main.java.com.esiea.tp4A.domain;
 
-import java.util.ArrayList;
-
 public class MarsRoverImpl implements MarsRover {
 
     private Position position;
     private PlanetMapImpl map;
+    private int laserRange;
 
     public Position getPosition() {
         return position;
@@ -26,7 +25,8 @@ public class MarsRoverImpl implements MarsRover {
 
     @Override
     public MarsRover configureLaserRange(int range) {
-        return null;
+        this.laserRange = range;
+        return this;
     }
 
     @Override
@@ -156,6 +156,3 @@ public class MarsRoverImpl implements MarsRover {
         return x;
     }
 }
-
-
-

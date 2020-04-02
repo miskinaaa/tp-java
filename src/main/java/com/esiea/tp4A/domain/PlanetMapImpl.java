@@ -21,24 +21,24 @@ public class PlanetMapImpl implements PlanetMap {
 	public Set<Position> obstaclePositions() {
 		return this.obstaclePositions;
 	}
-	
-	public void addObstacles(int x, int y) {
-		obstaclePositions.add(Position.of(x, y, Direction.NORTH));
+
+	public void addObstacles(Position position) {
+		this.obstaclePositions.add(position);
 	}
 
-	public boolean removeObstacles(int x, int y) {
-		if(obstaclePositions.contains(Position.of(x, y, Direction.NORTH))) {
-			obstaclePositions.remove(Position.of(x, y, Direction.NORTH));
+	public boolean removeObstacles(Position position) {
+		if(obstaclePositions.contains(position)) {
+			obstaclePositions.remove(position);
 			return true;
 		}
 
 		return false;
-
 	}
 
 	public boolean isThereObstacles(Position position) {
 		for(Position p : obstaclePositions) {
 			if(p.getX() == position.getX() && p.getY() == position.getY()) {
+				System.out.println("true");
 				return true;
 			}
 		}
