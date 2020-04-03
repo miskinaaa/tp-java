@@ -1,8 +1,12 @@
 package main.java.com.esiea.tp4A.domain;
 
+import java.text.CharacterIterator;
+import java.text.StringCharacterIterator;
+
 public class MarsRoverImpl implements MarsRover {
 
     private Position position;
+    private Position nextPos;
     private PlanetMapImpl map;
     private int laserRange;
 
@@ -32,72 +36,67 @@ public class MarsRoverImpl implements MarsRover {
     @Override
     public Position move(String command) {
         command = command.toLowerCase();
-        System.out.println(command);
         for (int i = 0; i < command.length(); i++) {
             if (command.charAt(i) == 'f') {
-                if (this.map.isThereObstacles(this.position)) {
-                    System.out.println("A: " + this.map.isThereObstacles(this.position));
-                    break;
-                }
-                else {
-                    System.out.println("B: " + map.isThereObstacles(position));
-                    System.out.println("move forward");
+                nextPos = newPosition(this.position, String.valueOf(command.charAt(i)), this.position.getDirection());
+                if (this.map.isThereObstacles(nextPos)) {
+                    continue;
+                } else {
                     moveForward();
                 }
             } else if (command.charAt(i) == 'b') {
-                //if (this.map != null && this.map.isThereObstacles(this.position)) {
+                nextPos = newPosition(this.position, String.valueOf(command.charAt(i)), this.position.getDirection());
+                if (this.map.isThereObstacles(nextPos)) {
+                    continue;
+                } else {
                     moveBackward();
-                //}
+                }
             } else if (command.charAt(i) == 'l') {
-                //if (this.map != null && this.map.isThereObstacles(this.position)) {
-                    rotateLeft();
-                //}
+                rotateLeft();
             } else if (command.charAt(i) == 'r') {
-                //if (this.map != null && this.map.isThereObstacles(this.position)) {
-                    rotateRight();
-                //}
+                rotateRight();
             } else {
-                return position;
+                return this.position;
             }
         }
-        return position;
+        return this.position;
     }
 
     private Position moveForward() {
         switch (this.position.getDirection()) {
             case NORTH:
-                position = Position.of(position.getX(),change_position_plus(position.getY()), Direction.NORTH);
-                return position;
+                this.position = Position.of(this.position.getX(), change_position_plus(this.position.getY()), Direction.NORTH);
+                return this.position;
             case SOUTH:
-                position = Position.of(position.getX(), change_position_minus(position.getY()), Direction.SOUTH);
-                return position;
+                this.position = Position.of(this.position.getX(), change_position_minus(this.position.getY()), Direction.SOUTH);
+                return this.position;
             case WEST:
-                position = Position.of(change_position_minus(position.getX()), position.getY(), Direction.WEST);
-                return position;
+                this.position = Position.of(change_position_minus(this.position.getX()), this.position.getY(), Direction.WEST);
+                return this.position;
             case EAST:
-                position = Position.of(change_position_plus(position.getX()), position.getY(), Direction.EAST);
-                return position;
+                position = Position.of(change_position_plus(this.position.getX()), this.position.getY(), Direction.EAST);
+                return this.position;
             default:
-                return position;
+                return this.position;
         }
     }
 
     private Position moveBackward() {
         switch (this.position.getDirection()) {
             case NORTH:
-                position = Position.of(position.getX(), change_position_minus(position.getY()), Direction.NORTH);
-                return position;
+                this.position = Position.of(this.position.getX(), change_position_minus(this.position.getY()), Direction.NORTH);
+                return this.position;
             case SOUTH:
-                position = Position.of(position.getX(), change_position_plus(position.getY()), Direction.SOUTH);
-                return position;
+                this.position = Position.of(this.position.getX(), change_position_plus(this.position.getY()), Direction.SOUTH);
+                return this.position;
             case WEST:
-                position = Position.of(change_position_plus(position.getX()), position.getY(), Direction.WEST);
-                return position;
+                this.position = Position.of(change_position_plus(this.position.getX()), this.position.getY(), Direction.WEST);
+                return this.position;
             case EAST:
-                position = Position.of(change_position_minus(position.getX()), position.getY(), Direction.EAST);
-                return position;
+                this.position = Position.of(change_position_minus(this.position.getX()), this.position.getY(), Direction.EAST);
+                return this.position;
             default:
-                return position;
+                return this.position;
         }
     }
 
@@ -105,59 +104,78 @@ public class MarsRoverImpl implements MarsRover {
     private Position rotateLeft() {
         switch (this.position.getDirection()) {
             case NORTH:
-                position = Position.of(position.getX(), position.getY(), Direction.WEST);
-                return position;
+                this.position = Position.of(this.position.getX(), this.position.getY(), Direction.WEST);
+                return this.position;
             case SOUTH:
-                position = Position.of(position.getX(), position.getY(), Direction.EAST);
-                return position;
+                this.position = Position.of(this.position.getX(), this.position.getY(), Direction.EAST);
+                return this.position;
             case WEST:
-                position = Position.of(position.getX(), position.getY(), Direction.SOUTH);
-                return position;
+                this.position = Position.of(this.position.getX(), this.position.getY(), Direction.SOUTH);
+                return this.position;
             case EAST:
-                position = Position.of(position.getX(), position.getY(), Direction.NORTH);
-                return position;
+                this.position = Position.of(this.position.getX(), this.position.getY(), Direction.NORTH);
+                return this.position;
             default:
-                return position;
+                return this.position;
         }
     }
 
     private Position rotateRight() {
         switch (this.position.getDirection()) {
             case NORTH:
-                position = Position.of(position.getX(), position.getY(), Direction.EAST);
-                return position;
+                position = Position.of(this.position.getX(), this.position.getY(), Direction.EAST);
+                return this.position;
             case SOUTH:
-                position = Position.of(position.getX(), position.getY(), Direction.WEST);
-                return position;
+                position = Position.of(this.position.getX(), this.position.getY(), Direction.WEST);
+                return this.position;
             case WEST:
-                position = Position.of(position.getX(), position.getY(), Direction.NORTH);
-                return position;
+                position = Position.of(this.position.getX(), this.position.getY(), Direction.NORTH);
+                return this.position;
             case EAST:
-                position = Position.of(position.getX(), position.getY(), Direction.SOUTH);
-                return position;
+                position = Position.of(this.position.getX(), this.position.getY(), Direction.SOUTH);
+                return this.position;
             default:
-                return position;
+                return this.position;
         }
     }
 
 
     public int change_position_plus(int x) {
-        if(x < this.map.getSIZE_OF_MAP() / 2) {
+        if (x < this.map.getSIZE_OF_MAP() / 2) {
             x++;
-        }
-        else if(x >= (this.map.getSIZE_OF_MAP() / 2)) {
+        } else if (x >= (this.map.getSIZE_OF_MAP() / 2)) {
             x = (-this.map.getSIZE_OF_MAP() / 2) + 1;
         }
         return x;
     }
 
     public int change_position_minus(int x) {
-        if(x > (-this.map.getSIZE_OF_MAP() / 2)) {
-            x --;
-        }
-        else if(x == (-this.map.getSIZE_OF_MAP() / 2)) {
+        if (x > (-this.map.getSIZE_OF_MAP() / 2)) {
+            x--;
+        } else if (x == (-this.map.getSIZE_OF_MAP() / 2)) {
             x = (this.map.getSIZE_OF_MAP() / 2) - 1;
         }
         return x;
+    }
+
+
+    private Position newPosition(Position pos, String command, Direction dir) {
+        //"TOUT DROIT" : f N ; b S ; r W ; l E
+        if ((command.equals("f") && dir.equals(Direction.NORTH)) || (command.equals("b") && dir.equals(Direction.SOUTH)) || (command.equals("r") && dir.equals(Direction.WEST)) || (command.equals("l") && dir.equals(Direction.EAST))) {
+            nextPos = Position.of(this.position.getX(), change_position_plus(this.position.getY()), this.position.getDirection());
+        }
+        //"DERRIERE" : f S ; b N ; r E ; l W
+        else if ((command.equals("f") && dir.equals(Direction.SOUTH)) || (command.equals("b") && dir.equals(Direction.NORTH)) || (command.equals("r") && dir.equals(Direction.EAST)) || (command.equals("l") && dir.equals(Direction.WEST))) {
+            nextPos = Position.of(this.position.getX(), change_position_minus(this.position.getY()), this.position.getDirection());
+        }
+        //a droite
+        else if ((command.equals("f") && dir.equals(Direction.EAST)) || (command.equals("b") && dir.equals(Direction.WEST))){
+            nextPos = Position.of(change_position_plus(this.position.getX()), this.position.getY(), this.position.getDirection());
+        }
+
+        else if ((command.equals("f") && dir.equals(Direction.WEST)) || (command.equals("b") && dir.equals(Direction.EAST))){
+            nextPos = Position.of(change_position_minus(this.position.getX()), this.position.getY(), this.position.getDirection());
+        }
+        return nextPos;
     }
 }
