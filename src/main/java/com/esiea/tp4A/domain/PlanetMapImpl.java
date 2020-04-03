@@ -46,17 +46,19 @@ public class PlanetMapImpl implements PlanetMap {
 			obstaclePositions.remove(position);
 			return true;
 		}
-
 		return false;
 	}
+
 
 	public boolean isThereObstacles(Position position) {
 		for(Position p : obstaclePositions) {
 			if(p.getX() == position.getX() && p.getY() == position.getY()) {
-				System.out.println("true");
 				return true;
 			}
 		}
 		return false;
+	}
+	public Set<Position> getObstaclePositions() {
+		return obstaclePositions;
 	}
 }

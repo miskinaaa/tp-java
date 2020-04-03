@@ -10,10 +10,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 public class MarsRoverTest {
-    final MarsRover marsRover = new MarsRoverImpl().initialize(Position.of(0, 0, Direction.NORTH));
-    final MarsRover marsRoverSouth = new MarsRoverImpl().initialize(Position.of(0, 0, Direction.SOUTH));
-    final MarsRover marsRoverEast = new MarsRoverImpl().initialize(Position.of(0, 0, Direction.EAST));
-    final MarsRover marsRoverWest = new MarsRoverImpl().initialize(Position.of(0, 0, Direction.WEST));
+    final MarsRoverImpl  marsRover = (MarsRoverImpl) new MarsRoverImpl().initialize(Position.of(0, 0, Direction.NORTH));
+    final MarsRoverImpl  marsRoverSouth = (MarsRoverImpl) new MarsRoverImpl().initialize(Position.of(0, 0, Direction.SOUTH));
+    final MarsRoverImpl  marsRoverEast = (MarsRoverImpl) new MarsRoverImpl().initialize(Position.of(0, 0, Direction.EAST));
+    final MarsRoverImpl  marsRoverWest = (MarsRoverImpl) new MarsRoverImpl().initialize(Position.of(0, 0, Direction.WEST));
 
 
 
@@ -154,6 +154,7 @@ public class MarsRoverTest {
     void move_forward_with_obstacle_north() {
         PlanetMapImpl planetMapImpl = (PlanetMapImpl) new PlanetMapImpl().initialize();
         planetMapImpl.addObstacles(Position.of(0, 1, Direction.NORTH));
+        System.out.println("caca" +planetMapImpl.isThereObstacles(Position.of(0, 1, Direction.NORTH)));
         marsRover.updateMap(planetMapImpl);
         Position position_obstacles = marsRover.move("f");
         assertEquals(position_obstacles.getX(), 0);
@@ -166,7 +167,8 @@ public class MarsRoverTest {
     void move_forward_with_obstacle_south() {
         PlanetMapImpl planetMapImpl = (PlanetMapImpl) new PlanetMapImpl().initialize();
         planetMapImpl.addObstacles(Position.of(0, -1, Direction.SOUTH));
-        marsRover.updateMap(planetMapImpl);
+        //System.out.println("caca" +planetMapImpl.isThereObstacles(Position.of(0, -1, Direction.SOUTH)));
+        marsRoverSouth.updateMap(planetMapImpl);
         Position position_obstacles = marsRoverSouth.move("f");
         assertEquals(position_obstacles.getX(), 0);
         assertEquals(position_obstacles.getY(), 0);
@@ -178,7 +180,7 @@ public class MarsRoverTest {
     void move_forward_with_obstacle_east() {
         PlanetMapImpl planetMapImpl = (PlanetMapImpl) new PlanetMapImpl().initialize();
         planetMapImpl.addObstacles(Position.of(1,0,Direction.EAST));
-        marsRover.updateMap(planetMapImpl);
+        marsRoverEast.updateMap(planetMapImpl);
         Position position_obstacles = marsRoverEast.move("f");
         assertEquals(position_obstacles.getX(), 0);
         assertEquals(position_obstacles.getY(), 0);
@@ -189,7 +191,7 @@ public class MarsRoverTest {
     void move_forward_with_obstacle_west() {
         PlanetMapImpl planetMapImpl = (PlanetMapImpl) new PlanetMapImpl().initialize();
         planetMapImpl.addObstacles(Position.of(-1,0,Direction.WEST));
-        marsRover.updateMap(planetMapImpl);
+        marsRoverWest.updateMap(planetMapImpl);
         Position position_obstacles = marsRoverWest.move("f");
         assertEquals(position_obstacles.getX(), 0);
         assertEquals(position_obstacles.getY(), 0);
@@ -207,6 +209,7 @@ public class MarsRoverTest {
         assertEquals(position_obstacles.getDirection(), Direction.NORTH);
     }
 
+
     @Test
     void move_left_with_obstacle() {
         PlanetMapImpl planetMapImpl = (PlanetMapImpl) new PlanetMapImpl().initialize();
@@ -215,7 +218,7 @@ public class MarsRoverTest {
         Position position_obstacles = marsRover.move("lf");
         assertEquals(position_obstacles.getX(), 0);
         assertEquals(position_obstacles.getY(), 0);
-        assertEquals(position_obstacles.getDirection(),Direction.NORTH );
+        assertEquals(position_obstacles.getDirection(),Direction.WEST );
     }
 
     @Test
@@ -226,7 +229,7 @@ public class MarsRoverTest {
         Position position_obstacles = marsRover.move("rf");
         assertEquals(position_obstacles.getX(), 0);
         assertEquals(position_obstacles.getY(), 0);
-        assertEquals(position_obstacles.getDirection(),Direction.NORTH );
+        assertEquals(position_obstacles.getDirection(),Direction.EAST );
     }
 
     @Test
@@ -248,6 +251,6 @@ public class MarsRoverTest {
         Position position_obstacles = marsRover.move("fflb");
         assertEquals(position_obstacles.getX(), 1);
         assertEquals(position_obstacles.getY(), 0);
-        //assertEquals(position_obstacles.getDirection(), Direction.EAST);
+        assertEquals(position_obstacles.getDirection(), Direction.WEST);
     }
 }
