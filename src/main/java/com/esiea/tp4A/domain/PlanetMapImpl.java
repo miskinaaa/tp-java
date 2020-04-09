@@ -33,6 +33,11 @@ public class PlanetMapImpl implements PlanetMap {
         return SIZE_OF_MAP;
     }
 
+    public int setSIZE_OF_MAP(int SIZE_OF_MAP) {
+        this.SIZE_OF_MAP = SIZE_OF_MAP;
+        return SIZE_OF_MAP;
+    }
+
     public boolean addObstacles(Position position) {
         if (!this.isThereObstacles(position)) {
             this.obstaclePositions.add(position);
