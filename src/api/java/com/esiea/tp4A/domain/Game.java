@@ -5,13 +5,12 @@ import main.java.com.esiea.tp4A.domain.MarsRoverImpl;
 import main.java.com.esiea.tp4A.domain.PlanetMapImpl;
 import main.java.com.esiea.tp4A.domain.Position;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class Game {
     PlanetMapImpl planetMapImpl = new PlanetMapImpl();
     MarsRoverImpl marsRoverImpl = (MarsRoverImpl) new MarsRoverImpl();
+    Set<Position> obstaclePositions = new HashSet<>();
     List<MarsRoverImpl> listPlayers =  new ArrayList<MarsRoverImpl>();
 
 
@@ -34,20 +33,24 @@ public class Game {
     //Position aléatoire
     public Position randomPosition(){
         Random rand = new Random();
-        int positiveNb = rand.nextInt(planetMapImpl.getSIZE_OF_MAP() / 2 );
-        int negativeNb = rand.nextInt(-planetMapImpl.getSIZE_OF_MAP() / 2);
-        int x = (int)(Math.random() * ((positiveNb - negativeNb) + 1)) + negativeNb;
-        int y = (int)(Math.random() * ((positiveNb - negativeNb) + 1)) + negativeNb;
+        int max = planetMapImpl.getSIZE_OF_MAP() / 2;
+        int min = - planetMapImpl.getSIZE_OF_MAP() / 2;
+        int x = rand.nextInt((max - min) + 1) + min;
+        int y = rand.nextInt((max - min) + 1) + min;
         Direction direction = randomDirection();
         Position pos = Position.of(x,y, direction);
+        System.out.println("X: " +pos.getX());
+        System.out.println("Y: " +pos.getY());
+        System.out.println("Direction: " +pos.getDirection());
         return pos;
     }
 
     // Génère aléatoirement des obstacles
-    public void generateObstacles(){
+    public Set<Position> generateObstacles(){
         for(int i = 0; i < planetMapImpl.getSIZE_OF_MAP()*0.15; i++) {
-            planetMapImpl.addObstacles(randomPosition());
+            this.obstaclePositions.add(randomPosition());
         }
+        return obstaclePositions;
     }
 
 
@@ -67,7 +70,7 @@ public class Game {
 
     //Portee du laser
     public int randomLaser(){
-        int[] laser_array = {5,30};
+        int[] laser_array = {5,30,1000};
         int index = new Random().nextInt(laser_array.length);
         return laser_array[index];
     }
