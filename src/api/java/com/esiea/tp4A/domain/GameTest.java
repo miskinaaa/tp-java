@@ -17,16 +17,10 @@ public class GameTest {
         Game game = new Game();
         int mapGame = game.randomMapSize();
         System.out.println("map: " +mapGame);
-        Direction direction = game.randomDirection();
-        System.out.println("direction: " +direction);
-        Position position = game.randomPosition();
-        System.out.println(position);
         Set<Position> obstaclePositions = game.generateObstacles();
-        System.out.println(planetMapImpl.getObstaclePositions());
         game.randomPlayers();
-        System.out.println(game.randomPlayers());
         game.randomLaser();
-        System.out.println(game.randomLaser());
+        System.out.println("laser: "+game.randomLaser());
     }
 
     public static void main(String[] args){

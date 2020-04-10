@@ -32,6 +32,7 @@ public class Game {
 
     //Position aléatoire
     public Position randomPosition(){
+        int i = 1;
         Random rand = new Random();
         int max = planetMapImpl.getSIZE_OF_MAP() / 2;
         int min = - planetMapImpl.getSIZE_OF_MAP() / 2;
@@ -47,7 +48,8 @@ public class Game {
 
     // Génère aléatoirement des obstacles
     public Set<Position> generateObstacles(){
-        for(int i = 0; i < planetMapImpl.getSIZE_OF_MAP()*0.15; i++) {
+        for(int i = 1; i <= planetMapImpl.getSIZE_OF_MAP()*0.15; i++) {
+            System.out.println("Obstacle numero: " +i);
             this.obstaclePositions.add(randomPosition());
         }
         return obstaclePositions;
@@ -58,6 +60,7 @@ public class Game {
     public List<MarsRoverImpl> randomPlayers(){
         Position position = null;
         for(int i = 1; i<=50; i++) {
+            System.out.println("Joueur numero: " +i);
             position = randomPosition();
             marsRoverImpl.initialize(position);
             //AFFECTER UN NUMERO AU ROVER
