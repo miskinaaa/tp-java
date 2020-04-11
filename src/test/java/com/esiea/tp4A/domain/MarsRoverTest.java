@@ -1,8 +1,7 @@
-package test.java.com.esiea.tp4A.domain;
-
-import main.java.com.esiea.tp4A.domain.*;
+package com.esiea.tp4A.domain;
 import org.junit.jupiter.api.Test;
 import static org.junit.Assert.assertEquals;
+import com.esiea.tp4A.domain.*;
 
 
 public class MarsRoverTest {
@@ -10,7 +9,6 @@ public class MarsRoverTest {
     final MarsRoverImpl  marsRoverSouth = (MarsRoverImpl) new MarsRoverImpl().initialize(Position.of(0, 0, Direction.SOUTH));
     final MarsRoverImpl  marsRoverEast = (MarsRoverImpl) new MarsRoverImpl().initialize(Position.of(0, 0, Direction.EAST));
     final MarsRoverImpl  marsRoverWest = (MarsRoverImpl) new MarsRoverImpl().initialize(Position.of(0, 0, Direction.WEST));
-
 
 
     @Test
