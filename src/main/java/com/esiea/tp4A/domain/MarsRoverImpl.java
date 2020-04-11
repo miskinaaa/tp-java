@@ -1,11 +1,14 @@
 package com.esiea.tp4A.domain;
 
+import com.esiea.tp4A.domain.*;
+
 public class MarsRoverImpl implements MarsRover {
 
     private Position position;
     private Position nextPos;
     private PlanetMapImpl map;
     private int laserRange;
+    private String playerName;
 
     public Position getPosition() {
         return position;
@@ -15,11 +18,22 @@ public class MarsRoverImpl implements MarsRover {
         return laserRange;
     }
 
+    public String getPlayerName() {
+        return playerName;
+    }
+
+    public MarsRoverImpl(Position position, PlanetMapImpl map, String playerName ) {
+        this.playerName = playerName;
+        this.initialize(position);
+        this.map = map;
+    }
+
     public MarsRover initialize(Position position) {
         this.position = position;
         this.map = (PlanetMapImpl) new PlanetMapImpl().initialize();
         return this;
     }
+
 
     @Override
     public MarsRover updateMap(PlanetMap map) {

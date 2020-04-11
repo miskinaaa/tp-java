@@ -1,15 +1,6 @@
-package api.java.com.esiea.tp4A.domain;
-
-import main.java.com.esiea.tp4A.domain.Direction;
-import main.java.com.esiea.tp4A.domain.MarsRoverImpl;
-import main.java.com.esiea.tp4A.domain.PlanetMapImpl;
-import main.java.com.esiea.tp4A.domain.Position;
-
-import java.util.*;
-
-public class Game {
+public class RandomGame {
     PlanetMapImpl planetMapImpl = new PlanetMapImpl();
-    MarsRoverImpl marsRoverImpl = (MarsRoverImpl) new MarsRoverImpl();
+    MarsRoverImpl marsRoverImpl = new MarsRoverImpl((Position.of(0, 50, Direction.NORTH)), planetMapImpl, "Game");
     Set<Position> obstaclePositions = new HashSet<>();
     List<MarsRoverImpl> listPlayers =  new ArrayList<MarsRoverImpl>();
 
