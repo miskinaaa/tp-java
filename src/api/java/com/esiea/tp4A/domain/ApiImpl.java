@@ -8,18 +8,31 @@ import main.java.com.esiea.tp4A.domain.Position;
 import java.util.*;
 
 public class ApiImpl implements Api {
+    private Set<MarsRoverImpl> marsRovers;
+    private final int laserRange;
+    private final int mapSize;
+    private final Set<Position> obstacles;
 
-    public ApiImpl() {
+    public ApiImpl(int mapSize, Set<Position> obstacles, int laserRange) {
+        RandomGame randomGame = new RandomGame();
+        this.mapSize = randomGame.randomMapSize();
+        this.obstacles = randomGame.generateObstacles();
+        this.laserRange = randomGame.randomLaser();
+        this.marsRovers = new HashSet<>();
     }
 
-    @Override
-    public Api initialize(Game game, String playerName) {
-        return null;
+    MarsRoverImpl findRover(String playerName) {
+        for (Iterator<MarsRoverImpl> marsRoverIterator = marsRovers.iterator(); marsRoverIterator.hasNext(); ) {
+            MarsRoverImpl marsRover = marsRoverIterator.next();
+            if (marsRover.getPlayerName().equals(playerName)){
+                return marsRover;
+            }
+        } return null;
     }
 
     @Override
     public Position getPosition(String playerName) {
-        return null;
+        return findRover(playerName).getPosition();
     }
 
     @Override
@@ -29,17 +42,18 @@ public class ApiImpl implements Api {
 
     @Override
     public int getLaserRange(String playerName) {
-        return 0;
+        return laserRange;
     }
 
     @Override
     public Position movePlayer(String playerName, String command) {
-        return null;
+        return findRover(playerName).getPosition();
     }
 
     @Override
     public void laserShoot(String playerName) {
-
+        Position playerPosition = findRover(playerName).getPosition();
+        findRover(playerName).getLaserRange();
     }
 
     @Override
