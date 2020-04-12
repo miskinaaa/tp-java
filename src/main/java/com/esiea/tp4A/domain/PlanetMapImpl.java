@@ -1,5 +1,9 @@
 package com.esiea.tp4A.domain;
+import com.esiea.tp4A.api.RandomGame;
+import com.esiea.tp4A.domain.PlanetMap;
+
 import java.util.HashSet;
+import java.util.Random;
 import java.util.Set;
 
 public class PlanetMapImpl implements PlanetMap {
@@ -15,18 +19,26 @@ public class PlanetMapImpl implements PlanetMap {
         initialize(new HashSet<>());
         return this;
     }
+
     public PlanetMap initialize(Set<Position> positions) {
         this.obstaclePositions = positions;
         return this;
     }
+
     @Override
     public Set<Position> obstaclePositions() {
         return this.obstaclePositions;
     }
+    public Set<Position> getObstaclePositions() {
+        return obstaclePositions;
+    }
+    public void setObstaclePositions(Set<Position> obstaclePositions) {
+        this.obstaclePositions = obstaclePositions;
+    }
+
     public int getSIZE_OF_MAP() {
         return SIZE_OF_MAP;
     }
-
     public int setSIZE_OF_MAP(int SIZE_OF_MAP) {
         this.SIZE_OF_MAP = SIZE_OF_MAP;
         return SIZE_OF_MAP;
@@ -51,8 +63,5 @@ public class PlanetMapImpl implements PlanetMap {
             }
         }
         return false;
-    }
-    public Set<Position> getObstaclePositions() {
-        return obstaclePositions;
     }
 }

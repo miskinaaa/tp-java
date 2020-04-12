@@ -1,6 +1,9 @@
 package com.esiea.tp4A.domain;
 
+import com.esiea.tp4A.domain.Direction;
+
 public interface Position {
+
     int getX();
     int getY();
     Direction getDirection();
@@ -33,6 +36,15 @@ public interface Position {
         @Override
         public Direction getDirection() {
             return direction;
+        }
+
+        @Override
+        public String toString() {
+            return "Current position: {" +
+                "x=" + x +
+                ", y=" + y +
+                ", direction=" + direction +
+                '}';
         }
     }
 }
