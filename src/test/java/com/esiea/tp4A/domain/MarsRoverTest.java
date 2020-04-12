@@ -1,7 +1,7 @@
 package com.esiea.tp4A.domain;
+import org.junit.*;
 import org.junit.jupiter.api.Test;
 import static org.junit.Assert.assertEquals;
-import com.esiea.tp4A.domain.*;
 
 
 public class MarsRoverTest {

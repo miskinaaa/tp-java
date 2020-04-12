@@ -1,3 +1,5 @@
+package api.java.com.esiea.tp4A.domain;
+
 public class RandomGame {
     PlanetMapImpl planetMapImpl = new PlanetMapImpl();
     MarsRoverImpl marsRoverImpl = new MarsRoverImpl((Position.of(0, 50, Direction.NORTH)), planetMapImpl, "Game");
