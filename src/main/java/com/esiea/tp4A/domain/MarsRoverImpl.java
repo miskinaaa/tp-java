@@ -1,89 +1,50 @@
 package com.esiea.tp4A.domain;
-
 public class MarsRoverImpl implements MarsRover {
+    private Position position;
+    private PlanetMapImpl map;
+    private int laserRange;
+    private String playerName;
+    private MarsRoverNewPosition marsRoverNewPosition;
+    private MarsRoverMove marsRoverMove;
+    public Position getPosition() {
+        return position;
+    }
+    public int getLaserRange() {
+        return laserRange;
+    }
+    public String getPlayerName() {
+        return playerName;
+    }
 
-    private int x;
-    private int y;
-    private Direction direction;
+    public MarsRoverImpl(Position position, PlanetMapImpl map, String playerName ) {
+        this.playerName = playerName;
+        this.initialize(position);
+        this.map = map;
+    }
 
-    public MarsRoverImpl() {  }
-
-    @Override
-    public MarsRover initialize(Position pos) {
-        this.x = pos.getX();
-        this.y = pos.getY();
-        this.direction = pos.getDirection();
+    public MarsRover initialize(Position position) {
+        this.position = position;
+        this.map = (PlanetMapImpl) new PlanetMapImpl().initialize();
+        this.marsRoverNewPosition = new MarsRoverNewPosition();
+        this.marsRoverMove = new MarsRoverMove();
         return this;
     }
 
     @Override
     public MarsRover updateMap(PlanetMap map) {
-        return null;
+        this.map = (PlanetMapImpl) map;
+        return this;
     }
 
     @Override
     public MarsRover configureLaserRange(int range) {
-        return null;
+        this.laserRange = range;
+        return this;
     }
 
     @Override
     public Position move(String command) {
-        switch (command) {
-            case "f":
-                if (direction == Direction.NORTH)
-                    this.y += 1;
-                if (direction == Direction.SOUTH)
-                    this.y -= 1;
-                if (direction == Direction.WEST)
-                    this.x -= 1;
-                if (direction == Direction.EAST)
-                    this.x += 1;
-                break;
-            case "b":
-                if (direction == Direction.NORTH)
-                    this.y -= 1;
-                if (direction == Direction.SOUTH)
-                    this.y += 1;
-                if (direction == Direction.WEST)
-                    this.x += 1;
-                if (direction == Direction.EAST)
-                    this.x -= 1;
-                break;
-            case "l":
-                if (direction == Direction.NORTH)
-                    this.direction = Direction.WEST;
-                else if (direction == Direction.SOUTH)
-                    this.direction = Direction.EAST;
-                else if (direction == Direction.WEST)
-                    this.direction = Direction.SOUTH;
-                else
-                    this.direction = Direction.NORTH;
-                break;
-            case "r":
-                if (direction == Direction.NORTH)
-                    this.direction = Direction.EAST;
-                else if (direction == Direction.SOUTH)
-                    this.direction = Direction.WEST;
-                else if (direction == Direction.WEST)
-                    this.direction = Direction.NORTH;
-                else
-                    this.direction = Direction.SOUTH;
-                break;
-            default:
-                return null;
-        }
-        return Position.of(x,y,direction);
-    }
-
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public Direction getDirection() {
-        return direction;
+        this.position = marsRoverMove.move(command, this.position, marsRoverNewPosition, map, getLaserRange());
+        return this.position;
     }
 }
