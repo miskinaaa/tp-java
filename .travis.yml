@@ -1,7 +1,12 @@
 language: java
 
+install: mvn install
+
 cache:
     directories:
         - "$HOME/.m2"
 
 script: "mvn verify"
+
+after_success:
+    - bash <(curl -s https://codecov.io/bash)
