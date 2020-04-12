@@ -5,6 +5,7 @@ import main.java.com.esiea.tp4A.domain.Direction;
 import main.java.com.esiea.tp4A.domain.MarsRoverImpl;
 import main.java.com.esiea.tp4A.domain.PlanetMapImpl;
 import main.java.com.esiea.tp4A.domain.Position;
+
 import java.util.*;
 
 public class ApiImpl implements Api {
@@ -24,10 +25,11 @@ public class ApiImpl implements Api {
     MarsRoverImpl findRover(String playerName) {
         for (Iterator<MarsRoverImpl> marsRoverIterator = marsRovers.iterator(); marsRoverIterator.hasNext(); ) {
             MarsRoverImpl marsRover = marsRoverIterator.next();
-            if (marsRover.getPlayerName().equals(playerName)){
+            if (marsRover.getPlayerName().equals(playerName)) {
                 return marsRover;
             }
-        } return null;
+        }
+        return null;
     }
 
     @Override

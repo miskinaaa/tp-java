@@ -6,15 +6,15 @@ import java.util.Set;
 
 public interface Player {
 
-    Player initialize(Api game, String playerName);
+    default Player initialize(Api game, String playerName);
 
-    Position getPosition();
+    default Position getPosition();
 
-    Set<Position> getObstaclesPlayers();
+    default Set<Position> getObstaclesPlayers();
 
-    int getLaserRange();
+    default int getLaserRange();
 
-    Position move(String command);
+    default Position move(String command);
 
-    boolean isAlive();
+    default boolean isAlive();
 }
