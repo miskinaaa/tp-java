@@ -1,6 +1,7 @@
 package com.esiea.tp4A.domain;
 
 import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
 
 
@@ -10,8 +11,6 @@ public class MarsRoverTest {
     final MarsRoverImpl  marsRoverSouth = new MarsRoverImpl((Position.of(0, 0, Direction.SOUTH)), planetMap);
     final MarsRoverImpl  marsRoverEast = new MarsRoverImpl((Position.of(0, 0, Direction.EAST)), planetMap);
     final MarsRoverImpl  marsRoverWest = new MarsRoverImpl((Position.of(0, 0, Direction.WEST)), planetMap);
-
-
 
     @Test
     public void move_error() {
@@ -326,8 +325,4 @@ public class MarsRoverTest {
         assertEquals(2,position_rover.getY());
         assertEquals(Direction.NORTH, position_rover.getDirection());
     }
-
-
-
-
 }
