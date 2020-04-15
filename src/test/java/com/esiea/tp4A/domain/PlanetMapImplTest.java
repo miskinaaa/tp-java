@@ -8,59 +8,68 @@ import static org.junit.Assert.assertEquals;
 public class PlanetMapImplTest {
     private final PlanetMapImpl planetMap = (PlanetMapImpl) new PlanetMapImpl().initialize(100);
     final MarsRoverImpl  marsRover = new MarsRoverImpl((Position.of(0, 0, Direction.NORTH)), planetMap);
+    final MarsRoverImpl  marsRoverSouth = new MarsRoverImpl((Position.of(0, 0, Direction.SOUTH)), planetMap);
+    final MarsRoverImpl  marsRoverEast = new MarsRoverImpl((Position.of(0, 0, Direction.EAST)), planetMap);
+    final MarsRoverImpl  marsRoverWest = new MarsRoverImpl((Position.of(0, 0, Direction.WEST)), planetMap);
 
     @Test
-    public void init_map() {
-        PlanetMapImpl planetMapImpl = (PlanetMapImpl) new PlanetMapImpl().initialize(600);
-        Assertions.assertThat(planetMapImpl).isEqualToComparingFieldByField((PlanetMapImpl) new PlanetMapImpl().initialize(600));
+    public void rotate_left_NORTH() {
+        Position position = marsRover.move("l");
+        assertEquals( 0, position.getX());
+        assertEquals(0, position.getY());
+        assertEquals(Direction.WEST, position.getDirection());
+    }
+    @Test
+    public void rotate_left_SOUTH() {
+        Position position = marsRoverSouth.move("l");
+        assertEquals( 0, position.getX());
+        assertEquals(0, position.getY());
+        assertEquals(Direction.EAST, position.getDirection());
     }
 
     @Test
-    public void planet_size(){
-        PlanetMapImpl planetMap = (PlanetMapImpl) new PlanetMapImpl().initialize(100);
-        assertEquals(100, planetMap.getSIZE_OF_MAP());
+    public void rotate_left_EAST() {
+        Position position = marsRoverEast.move("l");
+        assertEquals( 0, position.getX());
+        assertEquals(0, position.getY());
+        assertEquals(Direction.NORTH, position.getDirection());
     }
-
-
     @Test
-    public void add_obstacles_and_check_if_there_is_obstacle() {
-        PlanetMapImpl planetMapImpl = (PlanetMapImpl) new PlanetMapImpl().initialize();
-        planetMapImpl.addObstacles(Position.of(4, 6, Direction.NORTH));
-        boolean checkOb1 = planetMapImpl.isThereObstacles(Position.of(4, 6, Direction.NORTH));
-        assertEquals(true, checkOb1);
-        boolean checkOb2 = planetMapImpl.isThereObstacles(Position.of(7, 6, Direction.NORTH));
-        assertEquals(false, checkOb2);
-    }
-
-    @Test
-    public void add_obstacles_twice() {
-        PlanetMapImpl planetMapImpl = (PlanetMapImpl) new PlanetMapImpl().initialize();
-        boolean checkOb1 = planetMapImpl.addObstacles(Position.of(4, 6, Direction.NORTH));
-        boolean checkOb2 = planetMapImpl.addObstacles(Position.of(4, 6, Direction.NORTH));
-        assertEquals(true, checkOb1);
-        assertEquals(false, checkOb2);
+    public void rotate_left_WEST() {
+        Position position = marsRoverWest.move("l");
+        assertEquals( 0, position.getX());
+        assertEquals(0, position.getY());
+        assertEquals(Direction.SOUTH, position.getDirection());
     }
 
     @Test
-    public void remove_the_obstacle() {
-        PlanetMapImpl planetMapImpl = (PlanetMapImpl) new PlanetMapImpl().initialize();
-        Position p = Position.of(4, 4, Direction.NORTH);
-        planetMapImpl.addObstacles(p);
-        boolean obj = planetMapImpl.isThereObstacles(p);
-        assertEquals(true, obj);
-        planetMapImpl.removeObstacles(p);
-        assertEquals(0, planetMapImpl.getObstaclePositions().size());
+    public void rotate_right_NORTH() {
+        Position position = marsRover.move("r");
+        assertEquals( 0, position.getX());
+        assertEquals(0, position.getY());
+        assertEquals(Direction.EAST, position.getDirection());
+    }
+    @Test
+    public void rotate_right_SOUTH() {
+        Position position = marsRoverSouth.move("r");
+        assertEquals( 0, position.getX());
+        assertEquals(0, position.getY());
+        assertEquals(Direction.WEST, position.getDirection());
     }
 
     @Test
-    public void remove_obstacles_twice() {
-        PlanetMapImpl planetMapImpl = (PlanetMapImpl) new PlanetMapImpl().initialize();
-        Position position_obstacle = Position.of(1, 0, Direction.NORTH);
-        planetMapImpl.addObstacles(position_obstacle);
-        planetMapImpl.removeObstacles(position_obstacle);
-        assertEquals(0, planetMapImpl.getObstaclePositions().size());
-        planetMapImpl.removeObstacles(position_obstacle);
-        assertEquals(0, planetMapImpl.getObstaclePositions().size());
+    public void rotate_right_EAST() {
+        Position position = marsRoverEast.move("r");
+        assertEquals( 0, position.getX());
+        assertEquals(0, position.getY());
+        assertEquals(Direction.SOUTH, position.getDirection());
+    }
+    @Test
+    public void rotate_right_WEST() {
+        Position position = marsRoverWest.move("r");
+        assertEquals( 0, position.getX());
+        assertEquals(0, position.getY());
+        assertEquals(Direction.NORTH, position.getDirection());
     }
 
 }

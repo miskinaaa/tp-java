@@ -1,7 +1,4 @@
 package com.esiea.tp4A.domain;
-
-import com.esiea.tp4A.api.RandomGame;
-
 public class MarsRoverImpl implements MarsRover {
     private Position position;
     private PlanetMapImpl map;
