@@ -1,7 +1,5 @@
 package com.esiea.tp4A.domain;
 
-import com.esiea.tp4A.api.RandomGame;
-
 public class MarsRoverImpl implements MarsRover {
     private Position position;
     private PlanetMapImpl map;
@@ -26,6 +24,10 @@ public class MarsRoverImpl implements MarsRover {
         this.initialize(position);
         this.map = map;
         configureLaserRange(5);
+<<<<<<< HEAD
+=======
+        isPlayerAlive = true;
+>>>>>>> test
     }
 
     public MarsRover initialize(Position position) {

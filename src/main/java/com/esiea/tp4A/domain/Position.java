@@ -1,5 +1,8 @@
 package com.esiea.tp4A.domain;
 
+
+import com.esiea.tp4A.domain.Direction;
+
 public interface Position {
     int getX();
     int getY();
