@@ -185,10 +185,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="720" />
-    <option name="width" value="880" />
-    <option name="height" value="860" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="953" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -353,7 +353,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586960127633" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587060682570" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -377,31 +377,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RandomGameTest">
-    <configuration name="ApiTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="tp-java" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.esiea.tp4A.api.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.esiea.tp4A.api" />
-      <option name="MAIN_CLASS_NAME" value="com.esiea.tp4A.api.ApiTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="PlanetMapImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.MarsRoverDeplacementTest">
+    <configuration name="MarsRoverDeplacementTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tp-java" />
       <extension name="coverage">
         <pattern>
@@ -409,22 +386,14 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.esiea.tp4A.domain" />
-      <option name="MAIN_CLASS_NAME" value="com.esiea.tp4A.domain.PlanetMapImplTest" />
-      <option name="METHOD_NAME" />
+      <option name="MAIN_CLASS_NAME" value="com.esiea.tp4A.domain.MarsRoverDeplacementTest" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="PositionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MarsRoverImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tp-java" />
       <extension name="coverage">
         <pattern>
@@ -432,69 +401,72 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.esiea.tp4A.domain" />
-      <option name="MAIN_CLASS_NAME" value="com.esiea.tp4A.domain.PositionTest" />
-      <option name="METHOD_NAME" />
+      <option name="MAIN_CLASS_NAME" value="com.esiea.tp4A.domain.MarsRoverImplTest" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="RandomGameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MarsRoverNewPositionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tp-java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.esiea.tp4A.api.*" />
+          <option name="PATTERN" value="com.esiea.tp4A.domain.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.esiea.tp4A.api" />
-      <option name="MAIN_CLASS_NAME" value="com.esiea.tp4A.api.RandomGameTest" />
-      <option name="METHOD_NAME" />
+      <option name="PACKAGE_NAME" value="com.esiea.tp4A.domain" />
+      <option name="MAIN_CLASS_NAME" value="com.esiea.tp4A.domain.MarsRoverNewPositionTest" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="MarsRoverGame" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="MarsRoverRotationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tp-java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.esiea.tp4A.*" />
+          <option name="PATTERN" value="com.esiea.tp4A.domain.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.esiea.tp4A.MarsRoverGame" />
+      <option name="PACKAGE_NAME" value="com.esiea.tp4A.domain" />
+      <option name="MAIN_CLASS_NAME" value="com.esiea.tp4A.domain.MarsRoverRotationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MarsRoverTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tp-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.esiea.tp4A.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.esiea.tp4A.domain" />
+      <option name="MAIN_CLASS_NAME" value="com.esiea.tp4A.domain.MarsRoverTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.ApiTest" />
-      <item itemvalue="JUnit.PlanetMapImplTest" />
-      <item itemvalue="JUnit.PositionTest" />
-      <item itemvalue="JUnit.RandomGameTest" />
+      <item itemvalue="JUnit.MarsRoverTest" />
+      <item itemvalue="JUnit.MarsRoverRotationTest" />
+      <item itemvalue="JUnit.MarsRoverNewPositionTest" />
+      <item itemvalue="JUnit.MarsRoverImplTest" />
+      <item itemvalue="JUnit.MarsRoverDeplacementTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RandomGameTest" />
-        <item itemvalue="JUnit.ApiTest" />
-        <item itemvalue="JUnit.PositionTest" />
-        <item itemvalue="JUnit.PlanetMapImplTest" />
+        <item itemvalue="JUnit.MarsRoverDeplacementTest" />
+        <item itemvalue="JUnit.MarsRoverImplTest" />
+        <item itemvalue="JUnit.MarsRoverNewPositionTest" />
+        <item itemvalue="JUnit.MarsRoverRotationTest" />
+        <item itemvalue="JUnit.MarsRoverTest" />
       </list>
     </recent_temporary>
   </component>
