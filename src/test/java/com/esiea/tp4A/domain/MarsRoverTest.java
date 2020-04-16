@@ -7,7 +7,6 @@ import static org.junit.Assert.assertEquals;
 
 public class MarsRoverTest {
     private final PlanetMapImpl planetMap = (PlanetMapImpl) new PlanetMapImpl().initialize(100);
-<<<<<<< HEAD
     final MarsRoverImpl  marsRover = new MarsRoverImpl((Position.of(0, 0, Direction.NORTH)), planetMap);
     final MarsRoverImpl  marsRoverSouth = new MarsRoverImpl((Position.of(0, 0, Direction.SOUTH)), planetMap);
     final MarsRoverImpl  marsRoverEast = new MarsRoverImpl((Position.of(0, 0, Direction.EAST)), planetMap);
@@ -325,7 +324,6 @@ public class MarsRoverTest {
         assertEquals(0,position_rover.getX());
         assertEquals(2,position_rover.getY());
         assertEquals(Direction.NORTH, position_rover.getDirection());
-=======
 
     @Test
     public void initializeTest(){
@@ -343,6 +341,5 @@ public class MarsRoverTest {
     public void configureLaserRangeTest(){
         MarsRover marsRover = new MarsRoverImpl((Position.of(0, 0, Direction.NORTH)), planetMap);
         Assertions.assertThat(marsRover.configureLaserRange(50)).isEqualTo(marsRover);
->>>>>>> test
     }
 }
