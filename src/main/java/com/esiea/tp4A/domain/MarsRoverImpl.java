@@ -24,10 +24,7 @@ public class MarsRoverImpl implements MarsRover {
         this.initialize(position);
         this.map = map;
         configureLaserRange(5);
-<<<<<<< HEAD
-=======
         isPlayerAlive = true;
->>>>>>> test
     }
 
     public MarsRover initialize(Position position) {
