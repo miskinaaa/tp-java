@@ -2,41 +2,38 @@ package com.esiea.tp4A.domain;
 
 public class MarsRoverDestroy {
 
-    public Position destroy(Position position, int laserRanger , PlanetMapImpl map) {
-        switch (position.getDirection()) {
-            case NORTH:
-                for (int i = 0; i <= laserRanger; i++) {
-                    Position positionShoot = Position.of(position.getX(), position.getY() + i, Direction.NORTH);
-                    if (map.isThereObstacles(positionShoot)) {
-                        map.removeObstacles(positionShoot);
-                        break;
-                    }
-                }
-            case SOUTH:
-                for (int i = 0; i <= laserRanger; i++) {
-                    Position positionShoot = Position.of(position.getX(), position.getY() - i, Direction.SOUTH);
-                    if (map.isThereObstacles(positionShoot)) {
-                        map.removeObstacles(positionShoot);
-                        break;
-                    }
-                }
-            case WEST:
-                for (int i = 0; i <= laserRanger; i++) {
-                    Position positionShoot = Position.of(position.getX() - i, position.getY(), Direction.WEST);
-                    if (map.isThereObstacles(positionShoot)) {
-                        map.removeObstacles(positionShoot);
-                        break;
-                    }
-                }
-            case EAST:
-                for (int i = 0; i <= laserRanger; i++) {
-                    Position positionShoot = Position.of(position.getX() + i, position.getY(), Direction.EAST);
-                    if (map.isThereObstacles(positionShoot)) {
-                        map.removeObstacles(positionShoot);
-                        break;
-                    }
-                }
+    public Position destroy(Position position, int laserRanger, PlanetMapImpl map) {
+        for (int i = 0; i <= laserRanger; i++) {
+            Position positionShoot = checkObstaclePosition(position, i);
+            if (breakObstacle(map, positionShoot)) break;
         }
         return position;
+    }
+
+    private Position checkObstaclePosition(Position position, int cpt) {
+        Position positionShoot = null;
+        switch (position.getDirection()) {
+            case NORTH:
+                positionShoot = Position.of(position.getX(), position.getY() + cpt, Direction.NORTH);
+                break;
+            case SOUTH:
+                positionShoot = Position.of(position.getX(), position.getY() - cpt, Direction.SOUTH);
+                break;
+            case WEST:
+                positionShoot = Position.of(position.getX() - cpt, position.getY(), Direction.WEST);
+                break;
+            case EAST:
+                positionShoot = Position.of(position.getX() + cpt, position.getY(), Direction.EAST);
+                break;
+        }
+        return positionShoot;
+    }
+
+    private boolean breakObstacle(PlanetMapImpl map, Position positionShoot) {
+        if (map.isThereObstacles(positionShoot)) {
+            map.removeObstacles(positionShoot);
+            return true;
+        }
+        return false;
     }
 }
