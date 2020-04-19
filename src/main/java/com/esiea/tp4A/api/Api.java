@@ -7,11 +7,11 @@ import java.util.*;
 @RestController
 public class Api {
 
-    Map<Integer, MarsRoverImpl> players = new HashMap<>();
-    Integer idPlayer = (1 + (int)(Math.random() * ((50 - 1) + 1)));
-    PlanetMapImpl planetMap = (PlanetMapImpl) new PlanetMapImpl().initialize();
-    private RandomGame randomGame = new RandomGame();
-    private MarsRoverDestroy marsRoverDestroy = new MarsRoverDestroy();
+    private final Map<Integer, MarsRoverImpl> players = new HashMap<>();
+    private final Integer idPlayer = (1 + (int)(Math.random() * ((50 - 1) + 1)));
+    private final PlanetMapImpl planetMap = (PlanetMapImpl) new PlanetMapImpl().initialize();
+    private final RandomGame randomGame = new RandomGame();
+    private final MarsRoverDestroy marsRoverDestroy = new MarsRoverDestroy();
 
     @GetMapping("/join")
     public String join(@RequestParam(value = "name", defaultValue = "Game") String playerName) {

@@ -75,12 +75,41 @@ public class MarsRoverImplTest {
     }
 
     @Test
+    public void move_a_f_f() {
+        Position position_west_forward = marsRoverSouth.move("aff");
+        assertEquals(0,position_west_forward.getX());
+        assertEquals(-2,position_west_forward.getY());
+        assertEquals( Direction.SOUTH,position_west_forward.getDirection());
+    }
+
+    @Test
+    public void move_f__f() {
+        Position position_west_forward = marsRoverSouth.move("f f");
+        assertEquals(0,position_west_forward.getX());
+        assertEquals(-2,position_west_forward.getY());
+        assertEquals( Direction.SOUTH,position_west_forward.getDirection());
+    }
+
+    @Test
+    public void move_ff() {
+        Position position_west_forward = marsRoverSouth.move("f,f");
+        assertEquals(0,position_west_forward.getX());
+        assertEquals(-2,position_west_forward.getY());
+        assertEquals( Direction.SOUTH,position_west_forward.getDirection());
+    }
+
+
+    @Test
     public void move_to_1_2_w() {
         Position position_west_forward = marsRover.move("fflb");
         assertEquals(1,position_west_forward.getX());
         assertEquals(2,position_west_forward.getY());
         assertEquals( Direction.WEST,position_west_forward.getDirection());
     }
+
+
+
+
 
     @Test
     public void move_forward_with_obstacle_north() {

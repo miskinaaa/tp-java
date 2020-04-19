@@ -8,11 +8,11 @@ import com.esiea.tp4A.domain.Position;
 import java.util.*;
 
 public class RandomGame {
-    PlanetMapImpl planetMapImpl = new PlanetMapImpl();
-    MarsRoverImpl marsRoverImpl = new MarsRoverImpl((Position.of(0, 50, Direction.NORTH)), planetMapImpl);
-    Set<Position> obstaclePositions = new HashSet<>();
-    List<MarsRoverImpl> listPlayers =  new ArrayList<MarsRoverImpl>();
-    Random rand = new Random();
+    private final PlanetMapImpl planetMapImpl = new PlanetMapImpl();
+    private final MarsRoverImpl marsRoverImpl = new MarsRoverImpl((Position.of(0, 50, Direction.NORTH)), planetMapImpl);
+    private final Set<Position> obstaclePositions = new HashSet<>();
+    private final List<MarsRoverImpl> listPlayers =  new ArrayList<MarsRoverImpl>();
+    private final Random rand = new Random();
 
     public int randomMapSize(){
         int[] map_size_array = {100,300,600};

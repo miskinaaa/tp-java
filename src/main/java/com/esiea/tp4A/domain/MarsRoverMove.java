@@ -1,9 +1,9 @@
 package com.esiea.tp4A.domain;
 public class MarsRoverMove {
 
-    private MarsRoverDeplacement marsRoverDeplacement;
-    private MarsRoverRotation marsRoverRotation;
-    private MarsRoverDestroy marsRoverDestroy;
+    private final MarsRoverDeplacement marsRoverDeplacement;
+    private final MarsRoverRotation marsRoverRotation;
+    private final MarsRoverDestroy marsRoverDestroy;
 
     public MarsRoverMove() {
         this.marsRoverDeplacement = new MarsRoverDeplacement();
@@ -36,7 +36,7 @@ public class MarsRoverMove {
             } else if (command.charAt(i) == 's') {
                 position = this.marsRoverDestroy.destroy(position, laserRanger , map);
             } else {
-                return position;
+                position = position;
             }
         }
         return position;
