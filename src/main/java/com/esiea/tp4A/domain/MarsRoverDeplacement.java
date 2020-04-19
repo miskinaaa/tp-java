@@ -35,8 +35,8 @@ public class MarsRoverDeplacement {
     public int changePositionPlus(int x , PlanetMapImpl map) {
         if (x < map.getSIZE_OF_MAP() / 2) {
             x++;
-            if (map.getSIZE_OF_MAP() == 100 && x == 50) {
-                return -50;
+            if (map.getSIZE_OF_MAP() == 100 && x == 51) {
+                return -49;
             }
         } else if (x >= (map.getSIZE_OF_MAP() / 2)) {
             x = (-map.getSIZE_OF_MAP() / 2) + 1;
@@ -47,8 +47,8 @@ public class MarsRoverDeplacement {
     public int changePositionMinus(int x, PlanetMapImpl map) {
         if (x > (-map.getSIZE_OF_MAP() / 2)) {
             x--;
-            if (map.getSIZE_OF_MAP() == 100 && x == -50) {
-                return 50;
+            if (map.getSIZE_OF_MAP() == 100 && x == -51) {
+                return 49;
             }
         } else if (x == (-map.getSIZE_OF_MAP() / 2)) {
             x = (map.getSIZE_OF_MAP() / 2) - 1;

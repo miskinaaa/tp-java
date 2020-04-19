@@ -37,17 +37,17 @@ public class MarsRoverDeplacementTest {
 
     @Test
     public void moving_east_when_backward_E() {
-        final MarsRover marsRover = new MarsRoverImpl((Position.of(-49, -49, Direction.EAST)), planetMap);
+        final MarsRover marsRover = new MarsRoverImpl((Position.of(-50, -49, Direction.EAST)), planetMap);
         Position position_when_50_0_E = marsRover.move("b");
-        assertEquals(50, position_when_50_0_E.getX());
+        assertEquals(49, position_when_50_0_E.getX());
         assertEquals(-49, position_when_50_0_E.getY());
     }
 
     @Test
     public void moving_west_when_backward_W() {
-        final MarsRover marsRover = new MarsRoverImpl((Position.of(49, -49, Direction.WEST)), planetMap);
+        final MarsRover marsRover = new MarsRoverImpl((Position.of(50, -49, Direction.WEST)), planetMap);
         Position position_when_50_0_E = marsRover.move("b");
-        assertEquals(-50, position_when_50_0_E.getX());
+        assertEquals(-49, position_when_50_0_E.getX());
         assertEquals(-49, position_when_50_0_E.getY());
     }
 }
