@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4908da8d-fd7c-44b6-b4ac-85835c640824" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/esiea/tp4A/domain/MarsRoverDeplacement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/esiea/tp4A/domain/MarsRoverDeplacement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/esiea/tp4A/domain/MarsRoverDeplacementTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/esiea/tp4A/domain/MarsRoverDeplacementTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/esiea/tp4A/domain/MarsRoverDeplacement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/esiea/tp4A/domain/MarsRoverDeplacement.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,10 +34,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/esiea/tp4A/domain/MarsRoverDestroy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="392">
+              <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/esiea/tp4A/domain/MarsRoverDeplacement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="50" column="26" lean-forward="true" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
+            <state relative-caret-position="457">
+              <caret line="52" column="43" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -57,8 +67,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/esiea/tp4A/domain/MarsRoverDeplacementTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="47" column="69" selection-start-line="47" selection-start-column="69" selection-end-line="47" selection-end-column="69" />
+            <state relative-caret-position="306">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
@@ -66,7 +76,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/esiea/tp4A/domain/MarsRoverImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
+            <state relative-caret-position="816">
               <caret line="52" selection-start-line="52" selection-end-line="52" />
               <folding>
                 <element signature="e#507#508#0" expanded="true" />
@@ -134,8 +144,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="953" />
-    <option name="width" value="974" />
+    <option name="x" value="936" />
+    <option name="width" value="991" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -399,7 +409,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587331690398" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587332738637" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -535,23 +545,11 @@
       <workItem from="1586951677631" duration="8194000" />
       <workItem from="1587060491116" duration="801000" />
       <workItem from="1587319202980" duration="1737000" />
-      <workItem from="1587330389153" duration="1257000" />
+      <workItem from="1587330389153" duration="2312000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PositionTest - 2020.04.19 at 20h 21m 48s.xml">
-      <configuration name="PositionTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MarsRoverImplTest - 2020.04.19 at 20h 22m 48s.xml">
-      <configuration name="MarsRoverImplTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MarsRoverDeplacementTest - 2020.04.19 at 23h 07m 33s.xml">
-      <configuration name="MarsRoverDeplacementTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MarsRoverDeplacementTest_moving_backward_north_when_0_50_N - 2020.04.19 at 23h 09m 06s.xml">
-      <configuration name="MarsRoverDeplacementTest.moving_backward_north_when_0_50_N" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MarsRoverDeplacementTest_moving_backward_north_when_0_50_N - 2020.04.19 at 23h 09m 37s.xml">
       <configuration name="MarsRoverDeplacementTest.moving_backward_north_when_0_50_N" configurationId="JUnit" />
     </history-entry>
@@ -570,9 +568,21 @@
     <history-entry file="MarsRoverDeplacementTest_moving_west_when_backward_W - 2020.04.19 at 23h 24m 53s.xml">
       <configuration name="MarsRoverDeplacementTest.moving_west_when_backward_W" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MarsRoverDeplacementTest - 2020.04.19 at 23h 27m 42s.xml">
+      <configuration name="MarsRoverDeplacementTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MarsRoverDeplacementTest - 2020.04.19 at 23h 27m 57s.xml">
+      <configuration name="MarsRoverDeplacementTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MarsRoverDeplacementTest - 2020.04.19 at 23h 41m 15s.xml">
+      <configuration name="MarsRoverDeplacementTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MarsRoverDeplacementTest - 2020.04.19 at 23h 42m 20s.xml">
+      <configuration name="MarsRoverDeplacementTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19480000" />
+    <option name="totallyTimeSpent" value="20535000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -584,10 +594,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="936" y="0" width="991" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.40994474" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1557465" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -818,13 +828,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/esiea/tp4A/domain/MarsRoverDestroy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/esiea/tp4A/domain/MarsRoverImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
@@ -897,9 +900,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/esiea/tp4A/domain/MarsRoverDestroy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/esiea/tp4A/domain/MarsRoverImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
+        <state relative-caret-position="816">
           <caret line="52" selection-start-line="52" selection-end-line="52" />
           <folding>
             <element signature="e#507#508#0" expanded="true" />
@@ -921,15 +931,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/esiea/tp4A/domain/MarsRoverDeplacement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="50" column="26" lean-forward="true" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
+        <state relative-caret-position="457">
+          <caret line="52" column="43" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/esiea/tp4A/domain/MarsRoverDeplacementTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="47" column="69" selection-start-line="47" selection-start-column="69" selection-end-line="47" selection-end-column="69" />
+        <state relative-caret-position="306">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
